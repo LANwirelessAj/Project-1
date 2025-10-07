@@ -1,32 +1,100 @@
 <!DOCTYPE html>
-<html lang=""eng">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name-"viewpoint" content="width=device-width, initial-scale=1.0">
-    <title>The Evolution of HTTP</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Evolution of HTTP — Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- IT 3203 – Milestone #1 | Homepage (cover page with abstract, key terms, TOC) -->
 </head>
 <body>
-    <h1>The Evolution of HTTP</h1>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">The Evolution of HTTP</h1>
+      <p class="site-tagline">From early text requests to QUIC-powered performance</p>
+    </div>
+  </header>
 
-
-    <h2>Introduction</h2>
-    <p> Placeholder for Introduction</p>
-
-    <h2>Table of Contents</h2> 
-    <ul>
-        <li><a href="topic1.html">Topic 1</a><li>   
-        <li><a href="topic2.html">Topic 2</a><li>   
-        <li><a href=Concepts.html">Key Concepts</</a></li>
+  <!-- Consistent main menu across every page -->
+  <nav class="site-nav">
+    <div class="container">
+      <ul class="nav-list">
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="topic1.html">Topic 1</a></li>
+        <li><a href="topic2.html">Topic 2</a></li>
+        <li><a href="key-concepts.html">Key Concepts</a></li>
         <li><a href="references.html">References</a></li>
         <li><a href="about.html">About</a></li>
-    </ul>
+      </ul>
+    </div>
+  </nav>
 
-    <footer>
-        <p>This page is part of the Milestone Project for Intro to Web Development.</p>
-    </footer>
+  <main class="container" id="main">
+    <article class="content">
+      <!-- Abstract / Intro -->
+      <section>
+        <h1>Abstract</h1>
+        <p class="lede">
+          The World Wide Web relies on the Hypertext Transfer Protocol (HTTP) to move data between
+          clients and servers. Introduced in the early 1990s, HTTP became the backbone of the web,
+          enabling delivery of pages, media, and APIs at global scale. As the web grew, HTTP evolved
+          to improve speed, security, and reliability—culminating in modern protocols like HTTP/2
+          and HTTP/3 (over QUIC).
+        </p>
+        <p>
+          This site summarizes HTTP’s purpose and traces its major milestones, explaining why each
+          version matters for today’s mobile, streaming, and cloud-first experiences.
+        </p>
+      </section>
+
+      <!-- Key Terms -->
+      <section aria-labelledby="key-terms">
+        <h2 id="key-terms">Key Terms</h2>
+        <ul>
+          <li><strong>HTTP</strong> — Application-layer protocol for web requests/responses.</li>
+          <li><strong>HTTPS (TLS)</strong> — Encrypted HTTP for confidentiality and integrity.</li>
+          <li><strong>Client–Server</strong> — Browser/app requests; server responds.</li>
+          <li><strong>Latency</strong> — Delay from request to response.</li>
+          <li><strong>HTTP/2</strong> — Multiplexing and header compression over TCP.</li>
+          <li><strong>HTTP/3 / QUIC</strong> — UDP-based transport to reduce latency and avoid HoL blocking.</li>
+        </ul>
+      </section>
+
+      <!-- Table of Contents -->
+      <section aria-labelledby="toc">
+        <h2 id="toc">Table of Contents</h2>
+        <ol>
+          <li><a href="topic1.html">Topic 1: What HTTP Is & Why It Matters</a></li>
+          <li><a href="topic2.html">Topic 2: Evolution of HTTP (0.9 → 3)</a></li>
+          <li><a href="key-concepts.html">Key Concepts</a></li>
+          <li><a href="references.html">References & Resources</a></li>
+          <li><a href="about.html">About This Project</a></li>
+        </ol>
+      </section>
+
+      <!-- Visual (image placeholder you can replace) -->
+      <section aria-labelledby="hero-figure">
+        <h2 id="hero-figure">Visual</h2>
+        <figure class="figure">
+          <img src="images/http-hero.png" alt="Illustration of client-server requests flowing over HTTP" />
+          <figcaption>HTTP connects clients and servers to deliver web content and APIs.</figcaption>
+        </figure>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        This is a class project for <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener">IT 3203</a>.
+        © <span id="year"></span> Lawrence Ajayi • Deployed via GitHub Pages
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Small enhancement: current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
-</html>
-
-
 
