@@ -1,25 +1,89 @@
 <!DOCTYPE html>
-<html lang=""eng">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name-"viewpoint" content="width=device-width, initial-scale=1.0">
-    <title>Topic 1</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Topic 1 — What HTTP Is & Why It Matters</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- IT 3203 – Milestone #1 | Topic 1 -->
 </head>
 <body>
-    <h1>Topic 1</h1>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">The Web & HTTP</h1>
+      <p class="site-tagline">Topic 1 — What HTTP Is & Why It Matters</p>
+    </div>
+  </header>
 
-    <h2>Introduction</h2>
-    <p>[Placeholder for Introduction]</p>
-    
-    <h2>Paragraph 2</h2>
-    <p>[Placeholder for paragraph2]</p>
+  <nav class="site-nav">
+    <div class="container">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="topic1.html">Topic 1</a></li>
+        <li><a href="topic2.html">Topic 2</a></li>
+        <li><a href="key-concepts.html">Key Concepts</a></li>
+        <li><a href="references.html">References</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <h2>Conclusion</h2>
-    <p>[Placeholder for summary paragraph]</p>
+  <main class="container">
+    <article class="content">
+      <h1>What HTTP Is & Why It Matters</h1>
+      <p class="lede">
+        HTTP (Hypertext Transfer Protocol) is a client–server communication protocol that defines how requests and responses move between browsers/apps and web servers. 
+        It underpins delivery of HTML, CSS, JavaScript, images, video, and APIs across the world.
+      </p>
 
-    <footer>
-        <p>This page is part of the Milestone Project for Intro to Web Development.</p>
-    </footer>
+      <section aria-labelledby="purpose">
+        <h2 id="purpose">Role & Purpose of HTTP</h2>
+        <p>
+          HTTP’s request–response model enables efficient delivery of web pages and services.
+          Its design promotes <em>resource transfer</em>, <em>scalability</em> (via distributed servers/CDNs), <em>interoperability</em> (across browsers/devices),
+          and <em>extensibility</em> (headers, cookies, and caching for customization and performance). 
+        </p>
+      </section>
+
+      <section aria-labelledby="req-resp">
+        <h2 id="req-resp">Request–Response Model</h2>
+        <ul>
+          <li><strong>Client → Request:</strong> A browser or app asks for a resource (page, image, JSON, etc.).</li>
+          <li><strong>Server → Response:</strong> The server returns a status code, headers, and an optional body.</li>
+          <li><strong>Resources:</strong> HTML/CSS/JS, images, video, and API payloads used by frontends.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="why">
+        <h2 id="why">Why It’s Essential Today</h2>
+        <p>
+          Modern web usage demands secure, fast, reliable communication at massive scale. 
+          HTTPS (TLS) ensures confidentiality and integrity; caching and headers tune performance; 
+          new protocol versions (HTTP/2 and HTTP/3) reduce latency and improve reliability.
+        </p>
+      </section>
+
+      <section aria-labelledby="figure">
+        <h2 id="figure">Diagram</h2>
+        <figure class="figure">
+          <img src="images/http-basic-flow.png" alt="Client sends request to server; server responds with content and headers" />
+          <figcaption>Clients request; servers respond. Features like headers and caching improve performance.</figcaption>
+        </figure>
+      </section>
+
+      <aside class="callout" aria-label="tip">
+        <h3>Tip</h3>
+        <p>Use browser DevTools → Network to inspect request/response headers and status codes in real time.</p>
+      </aside>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>This is a class project for <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener">IT 3203</a>. © <span id="year"></span> Lawrence Ajayi</p>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
