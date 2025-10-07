@@ -1,25 +1,154 @@
 <!DOCTYPE html>
-<html lang=""eng">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name-"viewpoint" content="width=device-width, initial-scale=1.0">
-    <title>Topic 2</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Topic 2 — Evolution of HTTP (0.9 → 3)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- IT 3203 – Milestone #1 | Topic 2 -->
 </head>
 <body>
-    <h1>Topic 2</h1>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">The Web & HTTP</h1>
+      <p class="site-tagline">Topic 2 — Evolution of HTTP</p>
+    </div>
+  </header>
 
-    <h2>Introduction</h2>
-    <p>[Placeholder for Introduction]</p>
-    
-    <h2>Paragraph 2</h2>
-    <p>[Placeholder for paragraph2]</p>
+  <nav class="site-nav">
+    <div class="container">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="topic1.html">Topic 1</a></li>
+        <li><a class="active" href="topic2.html">Topic 2</a></li>
+        <li><a href="key-concepts.html">Key Concepts</a></li>
+        <li><a href="references.html">References</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <h2>Conclusion</h2>
-    <p>[Placeholder for summary paragraph]</p>
+  <main class="container">
+    <article class="content">
+      <h1>Evolution of HTTP (0.9 → 3)</h1>
+      <p class="lede">
+        HTTP has evolved from a simple text-based protocol into a fast, secure, and scalable system that powers today’s websites, APIs, streaming, and apps.
+      </p>
 
-    <footer>
-        <p>This page is part of the Milestone Project for Intro to Web Development.</p>
-    </footer>
+      <section aria-labelledby="timeline">
+        <h2 id="timeline">Major Versions & Changes</h2>
+        <ul>
+          <li><strong>HTTP/0.9:</strong> Minimal, text-based; single-line <code>GET</code>; returned raw HTML only.</li>
+          <li><strong>HTTP/1.0:</strong> Introduced headers, status codes, and MIME types; enabled images and multimedia.</li>
+          <li><strong>HTTP/1.1:</strong> Persistent connections and pipelining; better caching controls; the default for many years.</li>
+          <li><strong>HTTPS (TLS):</strong> Encryption for confidentiality, integrity, and authentication; now the default on the modern web.</li>
+          <li><strong>HTTP/2:</strong> Binary framing, multiplexing, and header compression; fewer connections with better throughput.</li>
+          <li><strong>HTTP/3:</strong> Uses QUIC over UDP to avoid head-of-line blocking and cut latency—especially on mobile/Wi-Fi.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="compare">
+        <h2 id="compare">Feature Comparison</h2>
+        <div class="table-wrap">
+          <table>
+            <caption>Key Features by Version</caption>
+            <thead>
+              <tr>
+                <th scope="col">Version</th>
+                <th scope="col">Transport</th>
+                <th scope="col">Core Features</th>
+                <th scope="col">Impact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">0.9</th>
+                <td>TCP</td>
+                <td><code>GET</code> only, HTML only, no headers</td>
+                <td>Early proof-of-concept for the Web</td>
+              </tr>
+              <tr>
+                <th scope="row">1.0</th>
+                <td>TCP</td>
+                <td>Headers, status codes, media types</td>
+                <td>Enables multimedia beyond plain text</td>
+              </tr>
+              <tr>
+                <th scope="row">1.1</th>
+                <td>TCP</td>
+                <td>Persistent connections, pipelining, caching controls</td>
+                <td>Reduces connection overhead; broad adoption</td>
+              </tr>
+              <tr>
+                <th scope="row">HTTPS</th>
+                <td>TLS over TCP</td>
+                <td>Encryption & authentication</td>
+                <td>Security by default across most of the Web</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>TCP</td>
+                <td>Binary framing, multiplexing, header compression</td>
+                <td>Faster loads; many streams on one connection</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>QUIC over UDP</td>
+                <td>Stream multiplexing without HoL blocking; faster handshakes</td>
+                <td>Lower latency; better on lossy/mobile networks</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="today">
+        <h2 id="today">Today’s Web & Why It Matters</h2>
+        <p>
+          The current web mixes HTTP/1.1, HTTP/2, and rapidly growing HTTP/3 adoption, with HTTPS as the norm.
+          Mobile usage, streaming, cloud apps, and real-time services demand low latency and resilience—needs that HTTP/2 and HTTP/3 address with multiplexing, header compression, and QUIC.
+        </p>
+      </section>
+
+      <section aria-labelledby="future">
+        <h2 id="future">Future Outlook</h2>
+        <p>
+          As technology continues to evolve, HTTP will remain central to how devices communicate online.
+          The rise of the Internet of Things (IoT), edge computing, and 5G connectivity will push HTTP toward lighter, faster, and more secure versions.
+          HTTP/3’s architecture sets the foundation for this future by optimizing speed and reliability even over unpredictable mobile and satellite networks.
+          In essence, HTTP’s development mirrors the web’s transformation—from a small academic network to a vast ecosystem connecting billions of users and devices worldwide.
+        </p>
+      </section>
+
+      <section aria-labelledby="illustration">
+        <h2 id="illustration">Illustration</h2>
+        <figure class="figure">
+          <img src="images/http-evolution-diagram.png" alt="Diagram comparing HTTP/1.1 over TCP to HTTP/3 over QUIC" />
+          <figcaption>HTTP/3’s QUIC transport avoids head-of-line blocking seen over TCP.</figcaption>
+        </figure>
+      </section>
+
+      <section aria-labelledby="summary">
+        <h2 id="summary">Summary</h2>
+        <p>
+          From basic text retrieval to encrypted, multiplexed, and latency-tolerant communication, HTTP’s evolution mirrors the web’s growth in scale, security, and speed.
+        </p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        This is a class project for 
+        <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener">IT 3203</a>. 
+        © <span id="year"></span> Lawrence Ajayi
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
