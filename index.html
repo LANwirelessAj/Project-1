@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewpoint" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Evolution of HTTP — Home</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- IT 3203 – Milestone #1 | Homepage (cover page with abstract, key terms, TOC) -->
+  <!-- IT 3203 – Milestone #1/#2 | Homepage (cover page with abstract, key terms, TOC) -->
 </head>
 <body>
   <header class="site-header">
@@ -16,7 +16,7 @@
   </header>
 
   <!-- Consistent main menu across every page -->
-  <nav class="site-nav">
+  <nav class="site-nav" role="navigation" aria-label="Main">
     <div class="container">
       <ul class="nav-list">
         <li><a class="active" href="index.html">Home</a></li>
@@ -25,6 +25,8 @@
         <li><a href="concepts.html">Concepts</a></li>
         <li><a href="references.html">References</a></li>
         <li><a href="about.html">About</a></li>
+        <!-- Milestone 2 requirement: link to quiz page -->
+        <li><a href="quiz.html">Quiz</a></li>
       </ul>
     </div>
   </nav>
@@ -33,7 +35,7 @@
     <article class="content">
       <!-- Abstract / Intro -->
       <section>
-        <h1>Abstract</h1>
+        <h2>Abstract</h2>
         <p class="lede">
           The World Wide Web relies on the Hypertext Transfer Protocol (HTTP) to move data between
           clients and servers. Introduced in the early 1990s, HTTP became the backbone of the web,
@@ -66,7 +68,7 @@
         <ol>
           <li><a href="topic1.html">Topic 1: What HTTP Is & Why It Matters</a></li>
           <li><a href="topic2.html">Topic 2: Evolution of HTTP (0.9 → 3)</a></li>
-          <li><a href="key-concepts.html">Key Concepts</a></li>
+          <li><a href="concepts.html">Key Concepts</a></li>
           <li><a href="references.html">References & Resources</a></li>
           <li><a href="about.html">About This Project</a></li>
         </ol>
@@ -86,7 +88,8 @@
   <footer class="site-footer">
     <div class="container">
       <p>
-        This is a class project for <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener">IT 3203</a>.
+        This is a class project for
+        <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener">IT 3203</a>.
         © <span id="year"></span> khadra Ahmed and Lawrence Ajayi • Deployed via GitHub Pages
       </p>
     </div>
@@ -97,4 +100,4 @@
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
-
+</html>
