@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTTP Evolution Quiz</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f2f2f2;
+    }
+    h1 {
+      text-align: center;
+      color: #003366;
+    }
+    form {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .result {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .correct { color: green; }
+    .incorrect { color: red; }
+    #scoreArea {
+      margin-top: 25px;
+      font-size: 1.2em;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    #scoreArea.pass { background-color: #d0f0c0; color: green; }
+    #scoreArea.fail { background-color: #ffd6d6; color: red; }
+    button {
+      background-color: #003366;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    button:hover {
+      background-color: #0055aa;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Quiz: The Evolution of HTTP</h1>
+
+  <form id="quizForm">
+
+    <!-- 1. Fill in the Blank -->
+    <div class="question">
+      <label><strong>1.</strong> The first version of HTTP, released in 1991, was called HTTP/<input type="text" id="q1" size="5">.</label>
+    </div>
+
+    <!-- 2. Multiple Choice -->
+    <div class="question">
+      <p><strong>2.</strong> Which version of HTTP introduced persistent connections?</p>
+      <label><input type="radio" name="q2" value="1.0"> HTTP/1.0</label><br>
+      <label><input type="radio" name="q2" value="1.1"> HTTP/1.1</label><br>
+      <label><input type="radio" name="q2" value="2"> HTTP/2</label>
+    </div>
+
+    <!-- 3. Multiple Choice -->
+    <div class="question">
+      <p><strong>3.</strong> Which HTTP version introduced multiplexing and header compression?</p>
+      <label><input type="radio" name="q3" value="1.1"> HTTP/1.1</label><br>
+      <label><input type="radio" name="q3" value="2"> HTTP/2</label><br>
+      <label><input type="radio" name="q3" value="3"> HTTP/3</label>
+    </div>
+
+    <!-- 4. Multiple Choice -->
+    <div class="question">
+      <p><strong>4.</strong> Which of the following protocols does HTTP rely on for data transfer?</p>
+      <label><input type="radio" name="q4" value="TCP"> TCP</label><br>
+      <label><input type="radio" name="q4" value="UDP"> UDP</label><br>
+      <label><input type="radio" name="q4" value="ICMP"> ICMP</label>
+    </div>
+
+    <!-- 5. Multi-select -->
+    <div class="question">
+      <p><strong>5.</strong> Which of these are key improvements of HTTP/3? (Select all that apply)</p>
+      <label><input type="checkbox" name="q5" value="QUIC"> Uses QUIC protocol</label><br>
+      <label><input type="checkbox" name="q5" value="Faster"> Faster connection setup</label><br>
+      <label><input type="checkbox" name="q5" value="Text"> Uses plain text only</label><br>
+      <label><input type="checkbox" name="q5" value="ReducedLatency"> Reduced latency</label>
+    </div>
+
+    <button type="button" onclick="checkAnswers()">Submit Quiz</button>
+    <button type="reset" onclick="resetQuiz()">Reset</button>
+
+  </form>
+
+  <div id="scoreArea"></div>
+
+  <script>
+    function checkAnswers() {
+      let score = 0;
+      let total = 5;
+
+      // Q1
+      const q1 = document.getElementById('q1').value.trim();
+      if (q1 === "0.9" || q1.toLowerCase() === "http/0.9") {
+        score++;
+        showResult(1, true, "HTTP/0.9");
+      } else {
+        showResult(1, false, "HTTP/0.9");
+      }
+
+      // Q2
+      const q2 = document.querySelector('input[name="q2"]:checked');
+      if (q2 && q2.value === "1.1") {
+        score++;
+        showResult(2, true, "HTTP/1.1");
+      } else {
+        showResult(2, false, "HTTP/1.1");
+      }
+
+      // Q3
+      const q3 = document.querySelector('input[name="q3"]:checked');
+      if (q3 && q3.value === "2") {
+        score++;
+        showResult(3, true, "HTTP/2");
+      } else {
+        showResult(3, false, "HTTP/2");
+      }
+
+      // Q4
+      const q4 = document.querySelector('input[name="q4"]:checked');
+      if (q4 && q4.value === "TCP") {
+        score++;
+        showResult(4, true, "TCP");
+      } else {
+        showResult(4, false, "TCP");
+      }
+
+      // Q5 (multi-select)
+      const q5 = document.querySelectorAll('input[name="q5"]:checked');
+      const correctQ5 = ["QUIC", "Faster", "ReducedLatency"];
+      let selectedValues = Array.from(q5).map(e => e.value);
+      if (arraysEqual(selectedValues.sort(), correctQ5.sort())) {
+        score++;
+        showResult(5, true, "QUIC, Faster connection setup, Reduced latency");
+      } else {
+        showResult(5, false, "QUIC, Faster connection setup, Reduced latency");
+      }
+
+      const pass = score >= 3;
+      const scoreArea = document.getElementById("scoreArea");
+      scoreArea.innerHTML = `Score: ${score}/${total} - ${pass ? "PASS" : "FAIL"}`;
+      scoreArea.className = pass ? "pass" : "fail";
+    }
+
+    function showResult(num, correct, answer) {
+      let existing = document.getElementById("result" + num);
+      if (!existing) {
+        existing = document.createElement("div");
+        existing.id = "result" + num;
+        existing.className = "result";
+        document.querySelectorAll(".question")[num - 1].appendChild(existing);
+      }
+      existing.innerHTML = correct
+        ? `<span class='correct'>Correct!</span> (${answer})`
+        : `<span class='incorrect'>Incorrect.</span> Correct answer: ${answer}`;
+    }
+
+    function arraysEqual(a, b) {
+      return Array.isArray(a) &&
+        Array.isArray(b) &&
+        a.length === b.length &&
+        a.every((val, index) => val === b[index]);
+    }
+
+    function resetQuiz() {
+      document.getElementById("scoreArea").innerHTML = "";
+      document.querySelectorAll(".result").forEach(e => e.remove());
+    }
+  </script>
+</body>
+</html>
