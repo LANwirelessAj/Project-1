@@ -1,25 +1,32 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-    <title>Topic 2</title>
+
+    <!-- This enables mobile responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Key Concepts</title>
+
+    <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Concepts</h1>
+
+    <h1>Key Concepts</h1>
 
     <h2>Concept 1</h2>
-    <p>[Placeholder for explanation]</p>
+    <p>HTTP (Hypertext Transfer Protocol) is the standard communication protocol used to transfer data between a client and a server on the web. However, HTTP does not encrypt the data being sent, which means sensitive information such as passwords, form data, and personal details can be intercepted by attackers. HTTPS (Hypertext Transfer Protocol Secure) is the secure version of HTTP that uses encryption through SSL/TLS certificates to protect data in transit. HTTPS ensures confidentiality, data integrity, and authentication between the client and the server. Today, HTTPS is the standard for modern websites because it improves security, user trust, and search engine rankings, while HTTP is mostly limited to testing or non-sensitive applications.</p>
     
     <h2>Concept 2</h2>
-    <p>[Placeholder for explanation]</p>
+    <p>Latency refers to the delay between a user sending a request and receiving a response from a server. High latency can cause websites to feel slow, unresponsive, or laggy, especially when loading images, videos, or interactive content. Several factors affect latency, including network congestion, distance between the client and server, server performance, and the web protocol being used. Newer versions of HTTP, such as HTTP/2 and HTTP/3, were specifically designed to reduce latency by allowing multiple requests to be sent at the same time and minimizing connection delays. Lower latency improves the overall user experience by making web applications faster, smoother, and more reliable.</p>
 
     <h2>Concept 3</h2>
-    <p>[Placeholder for explanation]</p>
+    <p>Multiplexing is a feature introduced in HTTP/2 that allows multiple data requests and responses to be sent simultaneously over a single connection. In older versions of HTTP, each request had to wait for the previous one to finish, which created delays known as head-of-line blocking. This caused websites to load slower, especially when many files such as images, scripts, and stylesheets were needed. With multiplexing, all requests can be processed at the same time, allowing pages to load much faster and more efficiently. HTTP/3 further improves this by using the QUIC protocol, which prevents data loss in one stream from affecting others, resulting in smoother and more reliable web performance.</p>
 
     <footer>
         <p>This page is part of the Milestone Project for Intro to Web Development.</p>
     </footer>
+
 </body>
 </html>
