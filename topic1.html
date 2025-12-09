@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
 
@@ -34,16 +36,18 @@
     <article class="content">
       <h1>What HTTP Is & Why It Matters</h1>
       <p class="lede">
-        HTTP (Hypertext Transfer Protocol) is a client–server communication protocol that defines how requests and responses move between browsers/apps and web servers. 
-        It underpins delivery of HTML, CSS, JavaScript, images, video, and APIs across the world.
+        HTTP (Hypertext Transfer Protocol) is a client–server communication protocol that defines
+        how requests and responses move between browsers/apps and web servers. It underpins
+        delivery of HTML, CSS, JavaScript, images, video, and APIs across the world.
       </p>
 
       <section aria-labelledby="purpose">
         <h2 id="purpose">Role & Purpose of HTTP</h2>
         <p>
           HTTP’s request–response model enables efficient delivery of web pages and services.
-          Its design promotes <em>resource transfer</em>, <em>scalability</em> (via distributed servers/CDNs), <em>interoperability</em> (across browsers/devices),
-          and <em>extensibility</em> (headers, cookies, and caching for customization and performance). 
+          Its design promotes <em>resource transfer</em>, <em>scalability</em> (via distributed
+          servers/CDNs), <em>interoperability</em> (across browsers/devices), and
+          <em>extensibility</em> (headers, cookies, and caching for customization and performance).
         </p>
       </section>
 
@@ -59,33 +63,43 @@
       <section aria-labelledby="why">
         <h2 id="why">Why It’s Essential Today</h2>
         <p>
-          Modern web usage demands secure, fast, reliable communication at massive scale. 
-          HTTPS (TLS) ensures confidentiality and integrity; caching and headers tune performance; 
+          Modern web usage demands secure, fast, reliable communication at massive scale.
+          HTTPS (TLS) ensures confidentiality and integrity; caching and headers tune performance;
           new protocol versions (HTTP/2 and HTTP/3) reduce latency and improve reliability.
         </p>
       </section>
 
-    <section aria-labelledby="figure">
-  <h2 id="figure">Diagram</h2>
+      <section aria-labelledby="figure">
+        <h2 id="figure">Diagram</h2>
 
-  <figure class="figure">
-    <img src="images/http-basic-flow.png" alt="Client sends request to server; server responds with content and headers" />
-    <figcaption>Clients request; servers respond. Features like headers and caching improve performance.</figcaption>
-  </figure>
+        <figure class="figure">
+          <img src="images/http-basic-flow.png"
+               alt="Client sends request to server; server responds with content and headers" />
+          <figcaption>
+            Clients request; servers respond. Features like headers and caching improve performance.
+          </figcaption>
+        </figure>
 
-  <aside class="callout" aria-label="tip">
-    <h3>Tip</h3>
-    <p>Use browser DevTools → Network to inspect request/response headers and status codes in real time.</p>
-  </aside>
-</section>
-
+        <aside class="callout" aria-label="tip">
+          <h3>Tip</h3>
+          <p>Use browser DevTools → Network to inspect request/response headers and status codes in real time.</p>
+        </aside>
+      </section>
+    </article>
+  </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>This is a class project for <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener">IT 3203</a>. © <span id="year"></span> Khadra Ahmed and Lawrence Ajayi</p>
+      <p>
+        This is a class project for
+        <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener">IT 3203</a>.
+        © <span id="year"></span> Khadra Ahmed and Lawrence Ajayi
+      </p>
     </div>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
