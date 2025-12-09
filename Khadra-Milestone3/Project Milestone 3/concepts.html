@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Key Concepts</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+    <nav class="container nav">
+        <h1 class="logo">Evolution of HTTP</h1>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="topic1.html">Topic 1</a></li>
+            <li><a href="topic2.html">Topic 2</a></li>
+            <li><a class="active" href="concepts.html">Concepts</a></li>
+            <li><a href="reference.html">References</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container page">
+
+    <section class="card">
+        <h2>Key Concepts in HTTP</h2>
+    </section>
+
+    <section class="card">
+        <h3>Latency</h3>
+        <p>
+            Latency is the delay between sending a request and receiving a response. Modern versions of HTTP aim to reduce latency to provide faster loading and smoother browsing experiences.
+        </p>
+    </section>
+
+    <section class="card">
+        <h3>Head-of-Line Blocking</h3>
+        <p>
+            In older versions of HTTP, one slow request could block others behind it. HTTP/2 reduced this issue through multiplexing, and HTTP/3 removed it entirely by using QUIC.
+        </p>
+    </section>
+
+    <section class="card">
+        <h3>Persistent Connections</h3>
+        <p>
+            HTTP/1.1 introduced persistent connections, allowing multiple requests to be sent over the same connection. This reduced overhead and improved performance.
+        </p>
+    </section>
+
+</main>
+
+<footer>
+    <p>IT 3203 – Evolution of HTTP</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+<header>
+    <nav class="container nav">
+        <h1 class="logo">Evolution of HTTP</h1>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="topic1.html">Topic 1</a></li>
+            <li><a href="topic2.html">Topic 2</a></li>
+            <li><a href="concepts.html">Concepts</a></li>
+            <li><a href="reference.html">References</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a class="active" href="quiz.html">Quiz</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container page">
+
+    <section class="card quiz-card">
+        <h2>HTTP Knowledge Quiz</h2>
+        <form id="quizForm">
+
+            <div class="question-card">
+                <p><strong>1. What was the first version of HTTP?</strong></p>
+                <label><input type="radio" name="q1" value="0.9"> HTTP/0.9</label><br>
+                <label><input type="radio" name="q1" value="1.0"> HTTP/1.0</label><br>
+                <label><input type="radio" name="q1" value="2"> HTTP/2</label>
+            </div>
+
+            <div class="question-card">
+                <p><strong>2. Which version introduced persistent connections?</strong></p>
+                <label><input type="radio" name="q2" value="1.1"> HTTP/1.1</label><br>
+                <label><input type="radio" name="q2" value="0.9"> HTTP/0.9</label><br>
+                <label><input type="radio" name="q2" value="3"> HTTP/3</label>
+            </div>
+
+            <div class="question-card">
+                <p><strong>3. HTTP/3 runs on which transport protocol?</strong></p>
+                <label><input type="radio" name="q3" value="quic"> QUIC</label><br>
+                <label><input type="radio" name="q3" value="tcp"> TCP</label><br>
+                <label><input type="radio" name="q3" value="udp-only"> UDP Only</label>
+            </div>
+
+            <div class="question-card">
+                <p><strong>4. Which version introduced multiplexing?</strong></p>
+                <label><input type="radio" name="q4" value="2"> HTTP/2</label><br>
+                <label><input type="radio" name="q4" value="1.0"> HTTP/1.0</label><br>
+                <label><input type="radio" name="q4" value="0.9"> HTTP/0.9</label>
+            </div>
+
+            <div class="question-card">
+                <p><strong>5. Select the improvements introduced in HTTP/2:</strong></p>
+                <label><input type="checkbox" name="q5" value="multiplexing"> Multiplexing</label><br>
+                <label><input type="checkbox" name="q5" value="header"> Header Compression</label><br>
+                <label><input type="checkbox" name="q5" value="plain"> Plain-text Only</label>
+            </div>
+
+            <button type="button" onclick="gradeQuiz()" class="btn-primary">Submit Quiz</button>
+            <button type="reset" class="btn-secondary">Reset</button>
+        </form>
+
+        <div id="quizResult" class="result-box"></div>
+    </section>
+
+</main>
+
+<footer>
+    <p>IT 3203 – Evolution of HTTP</p>
+</footer>
+
+</body>
+</html>
