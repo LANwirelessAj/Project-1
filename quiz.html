@@ -5,58 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HTTP Evolution Quiz</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #f2f2f2;
-    }
-    h1 {
-      text-align: center;
-      color: #003366;
-    }
-    form {
-      background: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    .question {
-      margin-bottom: 20px;
-    }
-    .result {
-      font-weight: bold;
-      margin-top: 10px;
-    }
-    .correct { color: green; }
-    .incorrect { color: red; }
-    #scoreArea {
-      margin-top: 25px;
-      font-size: 1.2em;
-      text-align: center;
-      padding: 10px;
-      border-radius: 8px;
-    }
-    #scoreArea.pass { background-color: #d0f0c0; color: green; }
-    #scoreArea.fail { background-color: #ffd6d6; color: red; }
-    button {
-      background-color: #003366;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-right: 10px;
-    }
-    button:hover {
-      background-color: #0055aa;
-    }
-  </style>
+<style>
+  h1 {
+    text-align: center;
+    color: #003366;
+  }
+  form {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .question {
+    margin-bottom: 20px;
+  }
+  .result {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  .correct { color: green; }
+  .incorrect { color: red; }
+  #scoreArea {
+    margin-top: 25px;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  #scoreArea.pass { background-color: #d0f0c0; color: green; }
+  #scoreArea.fail { background-color: #ffd6d6; color: red; }
+  button {
+    background-color: #003366;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  button:hover {
+    background-color: #0055aa;
+  }
+</style>
+  
 </head>
 <body>
-
+  <nav class="site-nav">
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="topic1.html">Topic 1</a></li>
+      <li><a href="topic2.html">Topic 2</a></li>
+      <li><a href="concepts.html">Concepts</a></li>
+      <li><a href="references.html">References</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="active" href="quiz.html">Quiz</a></li>
+    </ul>
+  </nav>
   <h1>Quiz: The Evolution of HTTP</h1>
 
   <form id="quizForm">
